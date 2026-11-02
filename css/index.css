@@ -1,0 +1,128 @@
+/* main */
+
+.jpl_presentacion {
+  min-height: 135px;
+  padding: 30px 16px 42px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(105deg, #343184 0%, #1b1b49 100%);
+}
+
+.jpl_etiqueta {
+  margin-bottom: 8px;
+  padding: 5px 9px;
+  color: #fff;
+  font-size: 0.55rem;
+  background-color: #413c9a;
+}
+
+.jpl_presentacion h1 {
+  margin: 0 0 7px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+.jpl_presentacion p {
+  margin: 0;
+  color: #c6c8e0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.jpl_panel_filtros {
+  position: relative;
+  margin-top: -15px;
+  padding: 14px 16px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 8px 22px rgb(20 25 45 / 12%);
+}
+
+.jpl_etiqueta_campo {
+  display: block;
+  margin-bottom: 4px;
+  color: #778092;
+  font-size: 0.62rem;
+}
+
+.jpl_icono_busqueda {
+  padding: 6px 8px;
+  border-color: #4569ff;
+  border-right: 0;
+  background-color: #fff;
+}
+
+.jpl_icono_busqueda img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.jpl_campo_busqueda {
+  min-height: 34px;
+  border-color: #4569ff;
+  border-left: 0;
+  font-size: 0.7rem;
+}
+
+.jpl_campo_busqueda:focus {
+  border-color: #4569ff;
+  box-shadow: none;
+}
+
+.jpl_boton_buscar {
+  margin-left: 8px !important;
+  padding: 6px 18px;
+  color: #fff;
+  font-size: 0.7rem;
+  background-color: #2857d8;
+}
+
+.jpl_boton_buscar:hover {
+  color: #fff;
+  background-color: #2048b8;
+}
+
+.jpl_select {
+  min-height: 34px;
+  color: #454d5d;
+  font-size: 0.68rem;
+}
+
+.jpl_eventos_vacio {
+  min-height: 385px;
+}
+
+@media (max-width: 767.98px) {
+  .jpl_presentacion {
+    padding: 28px 16px 38px;
+  }
+
+  .jpl_panel_filtros {
+    width: calc(100% - 24px);
+  }
+
+  .jpl_eventos_vacio {
+    min-height: 220px;
+  }
+}
+
+.jpl_img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.events-container {
+  min-height: 385px;
+}
+
+.jpl_categoria {
+  color: #ff4248;
+}
+
+@media (max-width: 767.98px) {
+  .events-container {
+    min-height: 220px;
+  }
+}

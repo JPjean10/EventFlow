@@ -1,0 +1,129 @@
+/* header */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.jpl_footer {
+  flex-shrink: 0;
+}
+
+.jpl_navbar {
+  min-height: 58px;
+  padding: 8px 4.5%;
+  background-color: #fff !important;
+}
+
+.jpl_logo {
+  color: #ff4248;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: #ff4248;
+  }
+}
+
+.jpl_enlace_menu {
+  color: #788092;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: #3f51b5;
+  }
+}
+
+.jpl_enlace_menu.jpl_enlace_activo {
+  color: #3f51b5;
+  border-bottom: 1px solid #3f51b5;
+}
+
+.jpl_enlace_usuario {
+    color: #171923;
+    font-size: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* footer */
+
+.jpl_footer {
+  color: #e8eaf2;
+  background-color: #111827;
+}
+
+.jpl_footer_contenido {
+  padding-top: 28px;
+  padding-bottom: 14px;
+}
+
+.jpl_footer_logo {
+  color: #f1f2f7;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.jpl_footer_descripcion {
+  max-width: 280px;
+  margin: 12px 0 0;
+  color: #8d95a6;
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.jpl_footer_titulo {
+  margin-bottom: 10px;
+  color: #f1f2f7;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.jpl_footer_enlace {
+  display: block;
+  width: fit-content;
+  margin-bottom: 7px;
+  color: #9299a8;
+  font-size: 0.65rem;
+  text-decoration: none;
+}
+
+.jpl_footer_enlace:hover {
+  color: #fff;
+}
+
+.jpl_libro_reclamaciones {
+  display: block;
+  width: 62px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.jpl_footer_pie {
+  margin-top: 20px;
+  padding: 14px 0 2px;
+  border-top: 1px solid #293143;
+  color: #8d95a6;
+  font-size: 0.62rem;
+}
+
+@media (max-width: 575.98px) {
+  .jpl_footer_contenido {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre y encuentra los mejores eventos de tu ciudad con EventFlow.">
+  <title>EventFlow | Descubre eventos increíbles</title>
+  <link rel="icon" href="img/icon/icon.png" type="image/x-icon">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+    defer></script>
+  <!-- ---- -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- jpl_styles jpl_script -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" defer></script>
+</head>
+
+<body>
+
+  <header class="jpl_header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary jpl_navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Mostrar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand jpl_logo" href="index.html">EventFlow</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link jpl_enlace_menu" data-menu="explorar" href="index.html">Explorar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link jpl_enlace_menu" data-menu="mis-eventos" href="mis-eventos.html">Mis eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link jpl_enlace_menu" data-menu="ayuda" href="ayuda.html">Ayuda</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center">
+            <img src="img/icon/user.png" alt="Icono de usuario" class="jpl_icono_usuario" width="24" height="24">
+            <p class="jpl_enlace_usuario p-1 mb-0">Ingresar</p>
+            <p class="jpl_enlace_usuario p-1 mb-0">Registrar</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="jpl_presentacion">
+      <span class="badge rounded-pill jpl_etiqueta">EVENTOS RECOMENDADOS PARA TI</span>
+      <h1>Descubre eventos increíbles</h1>
+      <p>
+        Encuentra, filtra e inscríbete en los mejores eventos de tu ciudad de forma
+        <br class="d-none d-md-block">
+        rápida y sencilla
+      </p>
+    </section>
+
+    <section class="container jpl_panel_filtros" aria-label="Filtros de eventos">
+      <form>
+        <div class="row g-2 align-items-end">
+          <div class="col-12 col-md-3">
+            <label class="form-label jpl_etiqueta_campo" for="jpl_categoria">
+              Categoría
+            </label>
+            <select class="form-select jpl_select" id="jpl_categoria">
+              <option value="" selected>Cargando categorías...</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label jpl_etiqueta_campo" for="jpl_busqueda">
+              Buscar eventos
+            </label>
+            <div class="input-group">
+              <span class="input-group-text jpl_icono_busqueda">
+                <img src="img/icon/search.png" alt="">
+              </span>
+              <input class="form-control jpl_campo_busqueda" id="jpl_busqueda" type="search"
+                placeholder="Jazz, talleres, deporte...">
+              <button class="btn jpl_boton_buscar" type="button">Buscar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="container events-container py-4" id="jpl_eventos" aria-live="polite">
+      <p>Cargando eventos...</p>
+      <template id="plantilla-evento">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <article class="card h-100 mb-3">
+            <img class="jpl_img" data-imagen alt="">
+            <div class="card-body">
+              <p class="card-text">
+                <span data-lugar></span>
+                <span class="jpl_categoria" data-categoria></span>
+              </p>
+              <h4 class="card-title" data-nombre></h4>
+              <p class="card-text">
+                <small class="fg-2" data-fecha></small>
+              </p>
+            </div>
+          </article>
+        </div>
+      </template>
+    </section>
+  </main>
+
+  <footer class="jpl_footer" id="ayuda">
+    <div class="container jpl_footer_contenido">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <a class="jpl_footer_logo" href="index.html">EventFlow</a>
+          <p class="jpl_footer_descripcion">
+            La plataforma líder para descubrir y registrarte en los mejores eventos
+            culturales, tecnológicos y de entretenimiento.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h2 class="jpl_footer_titulo">Compañía</h2>
+          <a class="jpl_footer_enlace" href="#">Acerca de nosotros</a>
+          <a class="jpl_footer_enlace" href="#">¿Tienes un evento?</a>
+          <a class="jpl_footer_enlace" href="#">Blog</a>
+          <a class="jpl_footer_enlace" href="#">Soporte</a>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h2 class="jpl_footer_titulo">Legal</h2>
+          <a class="jpl_footer_enlace" href="#">Privacidad</a>
+          <a class="jpl_footer_enlace" href="#">Términos de servicio</a>
+          <a class="jpl_footer_enlace" href="#">Cookies</a>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h2 class="jpl_footer_titulo">Contacto</h2>
+          <a class="jpl_footer_enlace" href="mailto:soporte@eventflow.com">
+            soporte@eventflow.com
+          </a>
+          <a class="jpl_footer_enlace" href="tel:+51912345678">
+            +51 9 123 456 78
+          </a>
+          <img class="jpl_libro_reclamaciones" src="img/libro_de_reclamaciones.png" alt="Libro de reclamaciones">
+        </div>
+      </div>
+      <div class="jpl_footer_pie">
+        © 2025 EventFlow. Diseñado para experiencias excepcionales. Todos los
+        derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<dialog class="dialog" id="exampleDialogDark" data-bs-theme="dark">
+  <div class="dialog-header">
+    <h1 class="dialog-title">Dark dialog title</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+  </div>
+  <div class="dialog-body">
+    <p>This is a native dialog element, only it’s set to dark mode. It uses the browser’s built-in modal behavior for accessibility and focus management.</p>
+  </div>
+  <div class="dialog-footer">
+    <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog">Close</button>
+    <button type="button" class="btn-solid theme-primary">Save changes</button>
+  </div>
+</dialog>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventFlow | Descubre eventos increíbles</title>
+    <link rel="icon" href="img/icon/icon.png" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <!-- jpl_styles jpl_script -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/evento.js" defer></script>
+</head>
+
+<body>
+
+    <header class="jpl_header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary jpl_navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Mostrar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand jpl_logo" href="index.html">EventFlow</a>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link jpl_enlace_menu" data-menu="explorar" href="index.html">Explorar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link jpl_enlace_menu" data-menu="mis-eventos" href="mis-eventos.html">Mis
+                                eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link jpl_enlace_menu" data-menu="ayuda" href="ayuda.html">Ayuda</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <img src="img/icon/user.png" alt="Icono de usuario" class="jpl_icono_usuario" width="24"
+                            height="24">
+                        <p class="jpl_enlace_usuario p-1 mb-0">Ingresar</p>
+                        <p class="jpl_enlace_usuario p-1 mb-0">Registrar</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="container py-5">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-evento">Detalle</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <img id="evento-imagen" src="" alt="Evento" class="img-fluid rounded mb-4">
+            <h1 id="evento-titulo"></h1>
+            <p id="evento-organizador" class="text-muted"></p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p><strong>📅 Fecha:</strong> <span id="evento-fecha"></span></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>🕒 Horario:</strong> <span id="evento-hora"></span></p>
+                </div>
+                <div class="col-12 mt-2">
+                    <p><strong>📍 Ubicación:</strong> <span id="evento-lugar"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card p-4 shadow-sm">
+                <h5 class="mb-3">SECTORES</h5>
+                <hr>
+                <div id="sectores-container">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>General</span> <strong>S/50.00</strong>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100 mt-3">COMPRAR ENTRADAS</button>
+                <p class="text-muted small mt-3">Al comprar entrada recibirás una confirmación. Podrás visualizar desde Mis eventos.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer class="jpl_footer" id="ayuda">
+        <div class="container jpl_footer_contenido">
+            <div class="row g-4">
+                <div class="col-12 col-md-5">
+                    <a class="jpl_footer_logo" href="index.html">EventFlow</a>
+                    <p class="jpl_footer_descripcion">
+                        La plataforma líder para descubrir y registrarte en los mejores eventos
+                        culturales, tecnológicos y de entretenimiento.
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <h2 class="jpl_footer_titulo">Compañía</h2>
+                    <a class="jpl_footer_enlace" href="#">Acerca de nosotros</a>
+                    <a class="jpl_footer_enlace" href="#">¿Tienes un evento?</a>
+                    <a class="jpl_footer_enlace" href="#">Blog</a>
+                    <a class="jpl_footer_enlace" href="#">Soporte</a>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <h2 class="jpl_footer_titulo">Legal</h2>
+                    <a class="jpl_footer_enlace" href="#">Privacidad</a>
+                    <a class="jpl_footer_enlace" href="#">Términos de servicio</a>
+                    <a class="jpl_footer_enlace" href="#">Cookies</a>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h2 class="jpl_footer_titulo">Contacto</h2>
+                    <a class="jpl_footer_enlace" href="mailto:soporte@eventflow.com">
+                        soporte@eventflow.com
+                    </a>
+                    <a class="jpl_footer_enlace" href="tel:+51912345678">
+                        +51 9 123 456 78
+                    </a>
+                    <img class="jpl_libro_reclamaciones" src="img/libro_de_reclamaciones.png"
+                        alt="Libro de reclamaciones">
+                </div>
+            </div>
+            <div class="jpl_footer_pie">
+                © 2025 EventFlow. Diseñado para experiencias excepcionales. Todos los
+                derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
