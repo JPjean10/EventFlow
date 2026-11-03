@@ -56,6 +56,11 @@ main {
     font-size: 0.75rem;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    &:hover{
+      border-bottom: 2px solid #000;
+    }
 }
 
 /* footer */

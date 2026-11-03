@@ -93,20 +93,6 @@
   min-height: 385px;
 }
 
-@media (max-width: 767.98px) {
-  .jpl_presentacion {
-    padding: 28px 16px 38px;
-  }
-
-  .jpl_panel_filtros {
-    width: calc(100% - 24px);
-  }
-
-  .jpl_eventos_vacio {
-    min-height: 220px;
-  }
-}
-
 .jpl_img {
   width: 100%;
   height: 50%;
@@ -121,8 +107,28 @@
   color: #ff4248;
 }
 
-@media (max-width: 767.98px) {
-  .events-container {
-    min-height: 220px;
-  }
+.jpl_link {
+  color: #ff4248;
+  border-bottom: 2px solid #ff4248;
+}
+
+.jpl_avatar_usuario {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+}
+
+.jpl_datos_usuario {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.jpl_datos_usuario small {
+  color: #788092;
 }
