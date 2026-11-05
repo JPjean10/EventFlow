@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const eventoGuardado = localStorage.getItem("eventoSeleccionado");
+    const btnComprar = document.getElementById("btn-comprar");
+
+    let evento = null;
+    let sectores = [];
 
     if (eventoGuardado) {
-        const evento = JSON.parse(eventoGuardado);
+        evento = JSON.parse(eventoGuardado);
 
         document.getElementById("evento-imagen").src = evento.imagen;
         document.getElementById("evento-titulo").textContent = evento.nombre;
@@ -47,4 +51,41 @@ document.addEventListener("DOMContentLoaded", () => {
             contenedor.append(fila);
         });
     }
+
+        btnComprar.addEventListener("click", () => {
+                const radioSeleccionado = document.querySelector('input[name="sector"]:checked');
+                
+                let sectorElegido = "GENERAL";
+                let precioElegido = evento.precioGeneral;
+
+                if (radioSeleccionado) {
+                    sectorElegido = radioSeleccionado.value;
+                    
+                    const sectorEncontrado = sectores.find(s => s.nombre === sectorElegido);
+                    if (sectorEncontrado) {
+                        precioElegido = sectorEncontrado.precio;
+                    }
+                }
+
+                const entradaComprada = {
+                    nombre: evento.nombre,
+                    imagen: evento.imagen,
+                    fecha: evento.fecha,
+                    Hora: evento.Hora,
+                    lugar: evento.lugar,
+                    sectorSeleccionado: sectorElegido,
+                    precioSeleccionado: precioElegido,
+                    fechaCompra: new Date().toLocaleDateString()
+                };
+
+        let misEventosGuardados = JSON.parse(localStorage.getItem("misEventos")) || [];
+            misEventosGuardados.push(entradaComprada);
+            localStorage.setItem("misEventos", JSON.stringify(misEventosGuardados));
+
+            console.log("Objeto completo de compra:", entradaComprada);
+
+            alert(`¡Entrada para el sector ${sectorElegido} comprada con éxito!`);
+            window.location.href = "mis_eventos.html";
+    });
+
 });
