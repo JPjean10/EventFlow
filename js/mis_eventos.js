@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loginForm = document.getElementById("loginForm");
     const registroForm = document.getElementById("registroForm");
-    const loginError = document.getElementById("loginError");
     const authAcciones = document.getElementById("authAcciones");
     const perfilUsuario = document.getElementById("perfilUsuario");
     const avatarUsuario = document.getElementById("avatarUsuario");
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function InicioSesion(usuarioObj) {
-        loginError.hidden = true;
         const colores = ["#5146e5", "#e74c3c", "#168f82", "#d97706", "#7c3aed"];
         const color = colores[Math.floor(Math.random() * colores.length)];
 
@@ -70,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
             item.contrasena === contrasena
         );
 
-        if (!usuario) {
-            loginError.textContent = "Gmail o contraseña incorrectos.";
-            loginError.hidden = false;
+        if (!usuarios) {
+            alert("Gmail o contraseña incorrectos.");
             return;
         }
+
 
         localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
         location.reload();
