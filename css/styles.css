@@ -63,6 +63,31 @@ main {
     }
 }
 
+.jpl_avatar_usuario {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+}
+
+.jpl_datos_usuario {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.jpl_datos_usuario small {
+  color: #788092;
+}
+
+.jpl_red {
+  color: #ff4248;
+}
+
 /* footer */
 
 .jpl_footer {

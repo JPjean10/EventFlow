@@ -2,20 +2,21 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventFlow | Mis eventos</title>
-    <link rel="icon" href="img/icon/icon.png" type="image/x-icon">
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
-        defer></script>
-    <!-- estilos personalizados -->
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/mis_eventos.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventFlow | Mis eventos</title>
+  <link rel="icon" href="img/icon/icon.png" type="image/x-icon">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+    defer></script>
+  <!-- estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/mis_eventos.js" defer></script>
+  <script src="js/lista.js" defer></script>
 </head>
 
 <body>
@@ -49,12 +50,16 @@
             <p class="jpl_enlace_usuario p-1 mb-0" id="p_registrar">Registrar</p>
           </div>
 
-          <div class="d-none align-items-center gap-2" id="perfilUsuario">
-            <span class="jpl_avatar_usuario" id="avatarUsuario"></span>
-            <div class="jpl_datos_usuario">
-              <span id="nombreUsuario"></span>
-              <small>Mi cuenta</small>
+          <div class="d-none align-items-center gap-3" id="perfilUsuario">
+            <div class="d-flex align-items-center gap-2">
+              <span class="jpl_avatar_usuario" id="avatarUsuario"></span>
+              <div class="jpl_datos_usuario">
+                <span id="nombreUsuario"></span>
+                <small>Mi cuenta</small>
+              </div>
             </div>
+            <button class="btn btn-outline-danger btn-sm" id="btnCerrarSesion" title="Cerrar sesión">Cerrar
+              sesión</button>
           </div>
         </div>
       </div>
@@ -62,59 +67,168 @@
   </header>
 
 
-    <section class="py-5 text-white" style="background-color: #1a1b35;">
-        <div class="container text-center">
-            <h1 class="fw-bold">Tus próximas experiencias, siempre a mano</h1>
-            <p class="text-secondary mb-0">Consulta tus entradas digitales, detalles de acceso y el historial de eventos que ya disfrutaste.</p>
+  <section class="py-5 text-white" style="background-color: #1a1b35;">
+    <div class="container text-center">
+      <h1 class="fw-bold">Tus próximas experiencias, siempre a mano</h1>
+      <p class="text-secondary mb-0">Consulta tus entradas digitales, detalles de acceso y el historial de eventos que
+        ya disfrutaste.</p>
+    </div>
+  </section>
+
+  <main class="container py-5">
+    <div class="mb-4">
+      <small class="text-uppercase text-muted fw-bold">MI CUENTA</small>
+      <h2 class="fw-bold">Mis eventos</h2>
+    </div>
+    <div id="lista-mis-eventos" class="row g-4">
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="jpl_footer" id="ayuda">
+    <div class="container jpl_footer_contenido">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <a class="jpl_footer_logo" href="index.html">EventFlow</a>
+          <p class="jpl_footer_descripcion">
+            La plataforma líder para descubrir y registrarte en los mejores eventos culturales, tecnológicos y de
+            entretenimiento.
+          </p>
         </div>
-    </section>
 
-    <main class="container py-5">
-        <div class="mb-4">
-            <small class="text-uppercase text-muted fw-bold">MI CUENTA</small>
-            <h2 class="fw-bold">Mis eventos</h2>
+        <div class="col-6 col-md-2">
+          <h2 class="jpl_footer_titulo">Compañía</h2>
+          <a class="jpl_footer_enlace" href="#">Acerca de nosotros</a>
+          <a class="jpl_footer_enlace" href="#">¿Tienes un evento?</a>
+          <a class="jpl_footer_enlace" href="#">Blog</a>
+          <a class="jpl_footer_enlace" href="#">Soporte</a>
         </div>
-        <div id="lista-mis-eventos" class="row g-4">
+
+        <div class="col-6 col-md-2">
+          <h2 class="jpl_footer_titulo">Legal</h2>
+          <a class="jpl_footer_enlace" href="#">Privacidad</a>
+          <a class="jpl_footer_enlace" href="#">Términos de servicio</a>
+          <a class="jpl_footer_enlace" href="#">Cookies</a>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="jpl_footer" id="ayuda">
-        <div class="container jpl_footer_contenido">
-            <div class="row g-4">
-                <div class="col-12 col-md-5">
-                    <a class="jpl_footer_logo" href="index.html">EventFlow</a>
-                    <p class="jpl_footer_descripcion">
-                        La plataforma líder para descubrir y registrarte en los mejores eventos culturales, tecnológicos y de entretenimiento.
-                    </p>
-                </div>
+        <div class="col-12 col-md-3">
+          <h2 class="jpl_footer_titulo">Contacto</h2>
+          <a class="jpl_footer_enlace" href="mailto:soporte@eventflow.com">soporte@eventflow.com</a>
+          <a class="jpl_footer_enlace" href="tel:+51912345678">+51 9 123 456 78</a>
+        </div>
+      </div>
+      <div class="jpl_footer_pie">
+        © 2025 EventFlow. Diseñado para experiencias excepcionales. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
 
-                <div class="col-6 col-md-2">
-                    <h2 class="jpl_footer_titulo">Compañía</h2>
-                    <a class="jpl_footer_enlace" href="#">Acerca de nosotros</a>
-                    <a class="jpl_footer_enlace" href="#">¿Tienes un evento?</a>
-                    <a class="jpl_footer_enlace" href="#">Blog</a>
-                    <a class="jpl_footer_enlace" href="#">Soporte</a>
-                </div>
-
-                <div class="col-6 col-md-2">
-                    <h2 class="jpl_footer_titulo">Legal</h2>
-                    <a class="jpl_footer_enlace" href="#">Privacidad</a>
-                    <a class="jpl_footer_enlace" href="#">Términos de servicio</a>
-                    <a class="jpl_footer_enlace" href="#">Cookies</a>
-                </div>
-
-                <div class="col-12 col-md-3">
-                    <h2 class="jpl_footer_titulo">Contacto</h2>
-                    <a class="jpl_footer_enlace" href="mailto:soporte@eventflow.com">soporte@eventflow.com</a>
-                    <a class="jpl_footer_enlace" href="tel:+51912345678">+51 9 123 456 78</a>
-                </div>
+  <div class="modal fade" id="RegistrarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4">
+        <div class="modal-header border-0 justify-content-center pb-0">
+          <div class="text-center">
+            <h1 class="modal-title fs-3 fw-bold" id="exampleModalLabel">Registro de Usuario</h1>
+            <p class="text-secondary mb-0">Crea tu cuenta para inscribirte en eventos</p>
+          </div>
+          <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"
+            aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5" style="max-height: 75vh; overflow-y: auto;">
+          <form id="registroForm">
+            <div class="mb-3"><label class="form-label fw-semibold small" for="lbl_nombre">Nombre</label><input
+                class="form-control py-3" id="lbl_nombre" name="nombre" type="text" placeholder="Ingresa tu nombre"
+                autocomplete="given-name" required></div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" for="lbl_apellidos">Apellidos</label>
+              <input class="form-control py-3" id="lbl_apellidos" name="apellidos" type="text"
+                placeholder="Ingresa tus apellidos" autocomplete="family-name">
             </div>
-            <div class="jpl_footer_pie">
-                © 2025 EventFlow. Diseñado para experiencias excepcionales. Todos los derechos reservados.
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" for="lbl_contrasena">Contraseña</label>
+              <input class="form-control py-3" id="lbl_contrasena" name="contrasena" type="password"
+                placeholder="Crea una contraseña" autocomplete="new-password">
             </div>
+            <div class="mb-3"><label class="form-label fw-semibold small" for="lbl_correo">Gmail</label>
+              <input class="form-control py-3" id="lbl_correo" name="correo" type="email"
+                placeholder="ejemplo@gmail.com" autocomplete="email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" for="lbl_fecha_nacimiento">Fecha de
+                nacimiento</label>
+              <input class="form-control py-3" id="lbl_fecha_nacimiento" name="nacimiento" type="date">
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-semibold small" for="lbl_dni">DNI</label>
+              <input class="form-control py-3" id="lbl_dni" name="dni" type="text" placeholder="12345678"
+                inputmode="numeric">
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" id="promociones" type="checkbox" name="promociones">
+              <label class="form-check-label small" for="promociones">
+                Declaro que he leído y acepto los
+                <span class="jpl_link">Términos y Condiciones, y Política de
+                  Privacidad</span> de Teleticket.
+              </label>
+            </div>
+            <div class="form-check mb-4"><input class="form-check-input" id="aceptaTerminos" type="checkbox"
+                name="aceptaTerminos" required><label class="form-check-label small" for="aceptaTerminos">Autorizo que
+                Teleticket envíe información sobre eventos y/o promociones que ofrece, así como encuestas.</label></div>
+            <button class="btn btn-primary w-100 py-3" type="submit">Registrarse</button>
+            <p class="text-center small mt-3 mb-0">¿Ya tienes cuenta?
+              <a href="#" class="link-primary fw-semibold text-decoration-none" data-bs-toggle="modal"
+                data-bs-target="#LoginModal" data-bs-dismiss="modal">Inicia sesión</a>
+            </p>
+          </form>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content border-0 rounded-4 shadow-lg p-3">
+
+        <div class="modal-header border-0 justify-content-center pb-0 position-relative">
+          <div class="text-center">
+            <h1 class="modal-title fs-3 fw-bold text-dark" id="loginModalLabel">Inicio de Sesión</h1>
+            <p class="text-secondary small mb-0">Ingresa a tu cuenta para continuar</p>
+          </div>
+          <button type="button" class="btn-close position-absolute end-0 top-0 me-3 mt-3" data-bs-dismiss="modal"
+            aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body px-4 py-4">
+          <form id="loginForm">
+            <div class="mb-3"><label class="form-label fw-semibold small" for="lbl_log_correo">Gmail</label><input
+                class="form-control py-3" id="lbl_log_correo" name="correo" type="email" placeholder="ejemplo@gmail.com"
+                autocomplete="email" required></div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" for="lbl_log_contrasena">Contraseña</label>
+              <input class="form-control py-3" id="lbl_log_contrasena" name="contrasena" type="password"
+                placeholder="Ingrese su contraseña" autocomplete="new-password" required>
+            </div>
+
+            <button class="btn btn-primary w-100 py-3" type="submit">Ingresa</button>
+
+            <p id="loginError" class="jpl_red" role="alert" hidden></p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+              <a href="#" class="small text-decoration-none fw-semibold text-dark">¿Olvidaste tu contraseña?</a>
+              <a href="#" class="small text-decoration-none fw-semibold text-primary" data-bs-toggle="modal"
+                data-bs-target="#RegistrarModal" data-bs-dismiss="modal">¿Aún no tienes cuenta? Regístrate</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
 </body>
 
 </html>
